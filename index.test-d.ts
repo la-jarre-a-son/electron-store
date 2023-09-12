@@ -1,5 +1,5 @@
 import {expectType, expectAssignable} from 'tsd';
-import Store = require('.');
+import Store from './index.js';
 
 new Store({defaults: {}}); // eslint-disable-line no-new
 new Store({name: 'myConfiguration'}); // eslint-disable-line no-new
@@ -28,8 +28,6 @@ store.store = {
 };
 
 store.path; // eslint-disable-line @typescript-eslint/no-unused-expressions
-
-type Schema<T> = Store.Schema<T>;
 
 type TypedStore = {
 	isEnabled: boolean;

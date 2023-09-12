@@ -1,7 +1,9 @@
 'use strict';
-const path = require('path');
-const {app, ipcMain, ipcRenderer, shell} = require('electron');
-const Conf = require('conf');
+import path from 'path';
+import * as electron from 'electron';
+import Conf from 'conf';
+
+const {app, ipcMain, ipcRenderer, shell} = electron;
 
 let isInitialized = false;
 
@@ -29,7 +31,7 @@ const initDataListener = () => {
 	return appData;
 };
 
-class ElectronStore extends Conf {
+export class ElectronStore extends Conf {
 	constructor(options) {
 		let defaultCwd;
 		let appVersion;
@@ -78,4 +80,4 @@ class ElectronStore extends Conf {
 	}
 }
 
-module.exports = ElectronStore;
+export default ElectronStore;

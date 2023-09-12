@@ -17,7 +17,7 @@ npm install electron-store
 ## Usage
 
 ```js
-const Store = require('electron-store');
+import Store from 'electron-store';
 
 const store = new Store();
 
@@ -68,7 +68,7 @@ You should define your schema as an object where each key is the name of your da
 Example:
 
 ```js
-const Store = require('electron-store');
+import Store from 'electron-store';
 
 const schema = {
 	foo: {
@@ -107,7 +107,7 @@ The `migrations` object should consist of a key-value pair of `'version': handle
 Example:
 
 ```js
-const Store = require('electron-store');
+import Store from 'electron-store';
 
 const store = new Store({
 	migrations: {
@@ -147,7 +147,7 @@ This can be useful for logging purposes, preparing migration data, etc.
 Example:
 
 ```js
-const Store = require('electron-store');
+import Store from 'electron-store';
 
 console.log = someLogger.log;
 
@@ -245,7 +245,7 @@ Default: `true`
 Accessing nested properties by dot notation. For example:
 
 ```js
-const Store = require('electron-store');
+import Store from 'electron-store';
 
 const store = new Store();
 
@@ -362,7 +362,7 @@ Get the item count.
 Get all the data as an object or replace the current data with an object:
 
 ```js
-const Store = require('electron-store');
+import Store from 'electron-store';
 
 const store = new Store();
 
@@ -386,7 +386,7 @@ Initializer to set up the required `ipc` communication channels for the module w
 In the main process:
 
 ```js
-const Store = require('electron-store');
+import Store from 'electron-store';
 
 Store.initRenderer();
 ```
@@ -394,7 +394,7 @@ Store.initRenderer();
 And in the renderer process:
 
 ```js
-const Store = require('electron-store');
+import Store from 'electron-store';
 
 const store = new Store();
 
@@ -414,7 +414,7 @@ The `serialize` and `deserialize` options can be used to customize the format of
 Example using YAML:
 
 ```js
-const Store = require('electron-store');
+import Store from 'electron-store';
 const yaml = require('js-yaml');
 
 const store = new Store({
