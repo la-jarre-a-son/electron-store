@@ -63,4 +63,6 @@ declare class ElectronStore<T extends Record<string, any> = Record<string, unkno
 	openInEditor(): void;
 }
 
-export = ElectronStore;
+export {ElectronStore};
+
+export default ElectronStore;

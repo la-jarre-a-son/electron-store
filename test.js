@@ -19,13 +19,13 @@ const run = async file => {
 };
 
 test('main', async t => {
-	const storagePath = await run('fixture.js');
+	const storagePath = await run('fixture.cjs');
 	t.deepEqual(JSON.parse(fs.readFileSync(storagePath, 'utf8')), {ava: '🚀'});
 	fs.unlinkSync(storagePath);
 });
 
 test('cwd option', async t => {
-	const result = await run('fixture-cwd.js');
+	const result = await run('fixture-cwd.cjs');
 	const [defaultPath, storagePath, storagePath2] = result.split('\n');
 	t.is(storagePath, path.join(defaultPath, 'foo/config.json'));
 	t.is(storagePath2, path.join(__dirname, 'bar/config.json'));
